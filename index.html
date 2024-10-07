@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>untoldcoding</title>
+    <link rel="stylesheet" href="Style3.css" />
+  </head>
+  <body>
+    <div class="envelope">
+      <div class="back"></div>
+      <div class="letter">
+        <div class="heart"></div>
+        <div class="text">
+          <p>
+            I want to say <br />
+            many thinks but, <br />
+            i can't express so i made <br />
+            this for you
+          </p>
+          <p><a href="https://ansh-gupta-technical.github.io/Wanna-Be-Yours/">Click Here For 🎁</a></p>
+        </div>
+      </div>
+      <div class="front"></div>
+      <div class="top"></div>
+      <div class="shadow"></div>
+      <div class="text1">
+        <h2>Hey! Listen I Have Something For You</h2>
+      </div>
+    </div>
+    <title>Music Pop-up</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        #popup {
+            display: none;
+            position: fixed;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            padding: 20px;
+            background-color: white;
+            border: 2px solid #ccc;
+            z-index: 1000;
+        }
+        #overlay {
+            display: none;
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+        }
+        #music-player {
+            position: fixed;
+            top: 10px; /* Adjust as needed */
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1001; /* Make sure it's above the popup */
+        }
+    </style>
+</head>
+<body>
+    <div id="overlay"></div>
+    <div id="popup">
+        <p>Do you want to play music?</p>
+        <button id="yes">Yes</button>
+        <button id="no">No</button>
+    </div>
+
+    <div id="music-player">
+        <audio id="background-music" src="perfect.mp3" loop controls></audio>
+    </div>
+    <script>
+        window.onload = function() {
+            document.getElementById('overlay').style.display = 'block';
+            document.getElementById('popup').style.display = 'block';
+        };
+
+        document.getElementById('yes').onclick = function() {
+            playMusic();
+            closePopup();
+        };
+
+        document.getElementById('no').onclick = function() {
+            playMusic();
+            closePopup();
+        };
+
+        function playMusic() {
+            const music = document.getElementById('background-music');
+            music.play().catch(function(error) {
+                console.log('Error playing music:', error);
+            });
+        }
+
+        function closePopup() {
+            document.getElementById('overlay').style.display = 'none';
+            document.getElementById('popup').style.display = 'none';
+        }
+    </script>
+
+</body>
+</html>
+  </body>
+</html>
